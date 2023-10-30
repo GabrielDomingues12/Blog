@@ -1,8 +1,12 @@
-import React from 'react'
-
+import Form from "../../../Components/Form/Form"
+import { SLogin } from "./style"
 const Login = () => {
   return (
-    <div>Login</div>
+    <>
+      <SLogin>
+        <Form/>
+      </SLogin>
+    </>
   )
 }
 

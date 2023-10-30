@@ -1,6 +1,7 @@
 import './App.css'
 import {BrowserRouter, Route, Routes} from"react-router-dom"
-
+//IMPORT COMPONENTS
+// import Container from './Components/Container'
 //IMPORT PAGES
 import Home from"./Pages/Home/index"
 import About from './Pages/About'
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <>
+    {/* <Container> */}
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home/>} />
@@ -23,6 +25,7 @@ function App() {
           <Route path="/create/post" element={<CreatePost/>} />
         </Routes>
       </BrowserRouter>
+      {/* </Container> */}
     </>
   )
 }
