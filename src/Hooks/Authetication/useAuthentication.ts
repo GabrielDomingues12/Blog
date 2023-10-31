@@ -1,4 +1,5 @@
-// import { db } from "../../../Firebase/config"
+import { db } from "../../../Firebase/config"
+import {app} from"../../Firebase/config"
 import { useState, useEffect } from "react"
 import {
   createUserWithEmailAndPassword,
@@ -12,7 +13,7 @@ const useAuthentication = () => {
     const[loading, setLoading] = useState(false)
     const[error, setError] = useState(false)
     const[cancelled, setCancelled] = useState(false)
-    const auth = getAuth()
+    const auth = getAuth(app)
 
     function checkIsCancelled(){
         if(cancelled){
@@ -24,37 +25,32 @@ const useAuthentication = () => {
         email: string,
         password: string,
         displayName: string,
-        name: string
-    }) => {
-        checkIsCancelled()
-        setError(false)
-        setLoading(true)
+      }) => {
+        checkIsCancelled();
+        setError(false);
+        setLoading(true);
         try {
-            const {user} = await createUserWithEmailAndPassword(
-                auth,
-                data.email,
-                data.password
-            )
-            await updateProfile(user,{
-                displayName: data.name
-            })
-            setLoading(false)
-            return{
-                createUser,
-                auth,
-                error: false,
-                loading: false
-            }
+          const { user } = await createUserWithEmailAndPassword(
+            auth,
+            data.email,
+            data.password
+          );
+          await updateProfile(user, {
+            displayName: data.displayName
+          });
+          setLoading(false);
+          return {
+            createUser: user,
+            auth,
+            error: false,
+            loading: false
+          };
         } catch (authError) {
-            window.alert('LOGIN ERROR')
-            return{
-                createUser,
-                auth,
-                error: true,
-                loading: false
-            }
+          setLoading(false);
+          throw new Error('Failed to create user: ');
         }
-    }
+      }
+      
     useEffect(() => {
         return () => setCancelled(true)
     })
