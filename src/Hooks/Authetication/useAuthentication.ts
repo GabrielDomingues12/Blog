@@ -1,6 +1,6 @@
 import { db } from "../../../Firebase/config"
 import {app} from"../../Firebase/config"
-import { useState, useEffect } from "react"
+import { useState, useEffect, ReactNode } from "react"
 import {
   createUserWithEmailAndPassword,
   getAuth,
@@ -45,9 +45,11 @@ const useAuthentication = () => {
             error: false,
             loading: false
           };
-        } catch (authError) {
+        } catch (error) {
+          const systemError = 
+          console.error(systemError.message)
           setLoading(false);
-          throw new Error('Failed to create user: ');
+          ('Failed to create user: ');
         }
       }
       
