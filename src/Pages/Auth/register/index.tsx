@@ -24,9 +24,9 @@ const Register = () => {
       confirmPassword,
     };
     if (password.length < 6) {
-      setError('A senha precisa ter pelo menos seis caracteres.')
+      setError('The password needing 6 charcters.')
     } else if (password !== confirmPassword) {
-      setError("As senhas não coincidem.");
+      setError("The passwords is differents.");
     } else {
       setSuccess('sing up make success')
       const response = await createUser(user);
