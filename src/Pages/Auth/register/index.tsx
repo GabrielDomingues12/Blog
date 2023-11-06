@@ -22,15 +22,15 @@ const Register = () => {
       email,
       password,
       confirmPassword,
-    };
+    }
     if (password.length < 6) {
       setError('The password needing 6 charcters.')
     } else if (password !== confirmPassword) {
-      setError("The passwords is differents.");
+      setError("The passwords is differents.")
     } else {
       setSuccess('sing up make success')
-      const response = await createUser(user);
-      console.log(response);
+      const response = await createUser(user)
+      console.log(response)
       navigate('/')
     }
   };
