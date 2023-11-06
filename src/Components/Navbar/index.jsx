@@ -32,10 +32,10 @@ const Index = () => {
                         </div>
                         <div class="hidden sm:ml-6 sm:block items-center justify-center">
                             <div class="flex space-x-4 items-center justify-center">
-                                <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
-                                {!user && !user ?(<a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>): null}
+                                <a href="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">About</a>
+                                {!user && !user ?(<a href="/login" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Login</a>): null}
                                {user && user ? (<a href="/create/post" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Create Post</a>): null}
-                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+                                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Time Line</a>
                             </div>
                         </div>
                     </div>
